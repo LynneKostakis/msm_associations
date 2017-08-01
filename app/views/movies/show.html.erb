@@ -22,15 +22,10 @@
 
       <dt>Director</dt>
       <dd>
-        <a href="/directors/<%=@movie.director_id %>">
-          
-        <%= Director.find_by(:id =>@movie.director_id).name %></dd>
-        </a>
+   
         
-      <dt>Character Count</dt>
+   
             <dt>Number of Characters</dt>
-      <dd><%= Movie.where(:@character.actor_id => @character.actor_id).count %></dd>
-
 
 
           

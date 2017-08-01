@@ -10,12 +10,7 @@ class MoviesController < ApplicationController
     @character = Character.new
     @actor = Actor.new
     
-    @movie.title = params[:title]
-    @movie.year = params[:year]
-    @movie.duration = params[:duration]
-    @movie.description = params[:description]
-    @movie.image_url = params[:image_url]
-    @movie.director_id = params[:director_id]
+
 
     save_status = @movie.save
 
