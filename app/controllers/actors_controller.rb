@@ -8,6 +8,14 @@ class ActorsController < ApplicationController
   def show
     @actor = Actor.find(params[:id])
     @character = Character.new
+    @movie = Movie.new
+    
+    @actor.name = params[:name]
+    @actor.dob = params[:dob]
+    @actor.bio = params[:bio]
+    @actor.image_url = params[:image_url]
+
+    save_status = @actor.save
 
     render("actors/show.html.erb")
   end
