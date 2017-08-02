@@ -16,12 +16,11 @@
 class Movie < ApplicationRecord
     
     validates :director_id, :presence => true
-    validates :title, :presence => true, :uniqueness => { :scope => :year,
-    message: "should be unique in combination with year" }
+    validates :title, :presence => true, :uniqueness => true
     
-    validates :year, numericality: {only_integer: true, :greater_than_or_equal_to => 1870, :less_than_or_equal_to => 2050} 
+    validates :year, numericality: true, inclusion: 1870..2050
    
-    validates :duration, numericality: {only_integer: true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 2764800} 
+    validates :duration, numericality: true, inclusion: 0..2764800, allow_blank: true 
 
     belongs_to :director
     has_many :characters

@@ -29,7 +29,7 @@ class DirectorsController < ApplicationController
     @director.bio = params[:bio]
     @director.image_url = params[:image_url]
 
-    save_status = @director.save
+    save_status = @director.save!
 
     if save_status == true
       redirect_to("/directors/#{@director.id}", :notice => "Director created successfully.")
