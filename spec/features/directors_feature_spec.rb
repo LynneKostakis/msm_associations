@@ -87,11 +87,12 @@ RSpec.describe "Directors", type: :feature do
       expect(page).to have_selector("form")
 
       count_of_movies = Movie.where(director_id: george_miller.id).count
+      puts count_of_movies
 
       fill_in 'Title', with: 'Mad Max: Fury Road'
       fill_in 'Year', with: 2015
       click_button 'Create Movie'
-
+puts count_of_movies
       expect(Movie.where(director_id: george_miller.id).count).to eq(count_of_movies + 1)
     end
 
