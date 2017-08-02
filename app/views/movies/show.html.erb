@@ -75,14 +75,19 @@
       
 
       <!-- Label and input for actor_id -->
-      <div class="form-group">
+
+        <div class="form-group">
         <label for="actor_id" class="control-label">
           Actor
+          <a href="/actors/new" >New Actor</a>
         </label>
 
-        <input type="text" id="actor_id" name="actor_id" placeholder="Actor" class="form-control" value="<%= @character.actor_id %>">
+        
+        <%= select_tag(:actor_id,options_from_collection_for_select(Actor.all, :id, :name), :class => "form-control") %>
+      
+      
       </div>
-
+      
       <!-- Label and input for name -->
       <div class="form-group">
         <label for="name" class="control-label">
