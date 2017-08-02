@@ -13,7 +13,9 @@
 
 class Actor < ApplicationRecord
     validates :name, presence: true, :uniqueness => {:scope => :dob,
-    message: "should be unique in combination with dob" }   
+    message: "should be unique in combination with dob" } 
+    
+    has_many :movies, :through => :characters
 
 end
 
