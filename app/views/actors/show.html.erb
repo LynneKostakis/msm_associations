@@ -39,12 +39,12 @@
 </div>
 
 
+<ul>
+  <% Character.where(:actor_id => @actor.id).each do |character| %>
+    <li><%= character.movie.title %></li>
+  <% end %>
 
-  <ul>
-    <% Character.where(:actor_id => @actor.id).each do |character| %>
-    <li><%= Movie.find_by(:id => character.movie_id).title %></li>
-    <% end %>
-  </ul>
+</ul>
 
 <div class="row">
   <div class="col-md-12">
