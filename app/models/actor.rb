@@ -16,7 +16,8 @@ class Actor < ApplicationRecord
     message: "should be unique in combination with dob" } 
     
     has_many :movies, :through => :characters
-
+    has_many :characters
+    
 end
 
 
