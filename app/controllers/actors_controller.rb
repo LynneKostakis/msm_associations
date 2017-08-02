@@ -10,10 +10,7 @@ class ActorsController < ApplicationController
     @character = Character.new
     @movie = Movie.new
     
-    @actor.name = params[:name]
-    @actor.dob = params[:dob]
-    @actor.bio = params[:bio]
-    @actor.image_url = params[:image_url]
+
 
     save_status = @actor.save
 

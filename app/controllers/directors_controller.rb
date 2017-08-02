@@ -8,11 +8,7 @@ class DirectorsController < ApplicationController
   def show
     @director = Director.find(params[:id])
     @movie= Movie.new
-    
-    @director.name = params[:name]
-    @director.dob = params[:dob]
-    @director.bio = params[:bio]
-    @director.image_url = params[:image_url]
+
 
     save_status = @director.save
 
